@@ -1,0 +1,528 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+        'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol';
+}
+
+.container {
+    max-width: 1800px;
+    margin: 0 auto;
+}
+
+.header {
+    height: 500px;
+    width: 100%;
+    background-color: #a9e9f6;
+    float: left;
+}
+
+.navi {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 100%;
+    box-shadow: none;
+    background-color: #a9e9f6;
+    position: fixed;
+    height: 60px !important;
+    overflow: hidden;
+    z-index: 10;
+}
+
+#gradient {
+    height: 100%;
+    position: fixed;
+    left: 0;
+    width: 250px;
+    margin-top: 60px;
+    transform: translateX(-250px);
+    transition: transform 250ms ease-in-out;
+    background: linear-gradient(180deg, #a9e9f6 0%, #3F5EFB 100%);
+}
+
+.backfont {
+    margin: 0;
+    padding: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.10);
+}
+
+.backfont li {
+    list-style: none;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 10px;
+    cursor: pointer;
+    border-bottom: 1px solid rgba(211, 201, 201, 0.177);
+}
+
+.backfont li span {
+    display: block;
+    font-size: 12px;
+    color: rgba(247, 244, 244, 0.5);
+}
+
+.backfont li a {
+    color: rgb(255, 255, 255);
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.backfont ol {
+    font-size: smaller;
+}
+
+input[type="checkbox"]:checked~#gradient {
+    transform: translateX(0);
+}
+
+input[type=checkbox] {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    display: none;
+}
+
+.sidebarIconToggle {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    cursor: pointer;
+    position: absolute;
+    z-index: 99;
+    height: 100%;
+    width: 100%;
+    top: 22px;
+    left: 15px;
+    height: 22px;
+    width: 22px;
+}
+
+.points {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    position: absolute;
+    height: 3px;
+    width: 150%;
+    background-color: rgb(252, 252, 252);
+}
+
+.boxx {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    position: relative;
+    float: left;
+    margin-top: 3px;
+}
+
+.something.smth-1 {
+    position: relative;
+    transition: all 0.3s;
+    box-sizing: border-box;
+    float: left;
+}
+
+.something.smth-2 {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    position: relative;
+    float: left;
+    margin-top: 3px;
+}
+
+input[type=checkbox]:checked~.sidebarIconToggle>.boxx {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    opacity: 0;
+}
+
+input[type=checkbox]:checked~.sidebarIconToggle>.something.smth-1 {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    transform: rotate(135deg);
+    margin-top: 8px;
+}
+
+input[type=checkbox]:checked~.sidebarIconToggle>.something.smth-2 {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    transform: rotate(-135deg);
+    margin-top: -9px;
+}
+
+.logo {
+    width: 10%;
+    position: relative;
+    margin-left: 100px;
+    margin-top: -50%;
+    font-size: 30px;
+    font-family: monospace;
+
+}
+
+.logo span {
+    color: #fff;
+}
+
+.box1 {
+    float: right;
+    width: 20%;
+    background-color: #a9e9f6;
+}
+
+.box1 p {
+    color: rgb(250, 249, 249);
+    font-family: monospace;
+    font: caption;
+    margin-left: 10%;
+}
+
+.box1 img {
+    width: 100%;
+}
+
+
+
+@media {
+
+    .slider {
+        max-width: 100%;
+        margin-top: 100px;
+        position: none;
+        margin: auto;
+        height: 500px;
+        margin-bottom: 15px;
+        overflow: hidden;
+    }
+
+    /* Картинка масштабируется по отношению к родительскому элементу */
+    .slider .item img {
+        object-fit: fill;
+        overflow: hidden;
+        width: auto;
+        height: 500px;
+        border: none !important;
+        box-shadow: none !important;
+        max-width: none;
+        margin-left: auto;
+        margin-right: auto;
+
+    }
+
+    .slider .prev,
+    .slider .next {
+        cursor: pointer;
+        position: absolute;
+        top: 0;
+        top: 50%;
+        width: auto;
+        margin-top: -122px;
+        padding: 16px;
+        color: white;
+        font-weight: bold;
+        font-size: 18px;
+        transition: 0.6s ease;
+        border-radius: 0 3px 3px 0;
+    }
+
+    .slider .next {
+        right: 0;
+        border-radius: 3px 0 0 3px;
+    }
+
+    /* При наведении на кнопки добавляем фон кнопок */
+    .slider .prev:hover,
+    .slider .next:hover {
+        background-color: rgba(9, 177, 249, 0.8);
+    }
+
+    /* Заголовок слайда */
+    .slideText {
+        position: absolute;
+        color: #fff;
+        font-size: 35px;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -10%);
+        margin-top: -122px;
+    }
+
+    .slideText1 {
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+
+    .slideText2 {
+        position: none;
+        color: #fff;
+        font-size: 35px;
+        left: 80%;
+        top: 50%;
+        transform: translate(-50%, -80%);
+        margin-top: -122px;
+    }
+
+    /* Кружочки */
+    .slider-dots {
+        text-align: center;
+        position: absolute;
+        margin-top: -50px;
+        margin-left: 50%;
+    }
+
+    .slider-dots_item {
+        cursor: pointer;
+        height: 12px;
+        width: 12px;
+        margin: 0 2px;
+        background-color: rgb(97, 210, 255);
+        border-radius: 50%;
+        display: inline-block;
+        transition: background-color 0.6s ease;
+    }
+
+    .active,
+    .slider-dots_item:hover {
+        background-color: #aaa;
+    }
+
+    /* Анимация слайдов */
+    .slider .item {
+        -webkit-animation-name: fade;
+        -webkit-animation-duration: 1.5s;
+        animation-name: fade;
+        animation-duration: 1.5s;
+        display: block;
+
+        justify-content: space-between;
+    }
+}
+
+@-webkit-keyframes fade {
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+
+
+.box2 {
+    width: 78%;
+    margin: 10px;
+    margin-top: 30px;
+    padding: 10px;
+    font-family: monospace;
+    float: left;
+    color: #977763;
+}
+
+.box2 h1 {
+
+    margin-top: 3%;
+
+    font-size: 30px;
+    color: #3fd5fb;
+}
+
+.box2 p {
+    float: left;
+    font-size: x-large;
+    text-align: justify;
+    text-indent: 10px;
+}
+
+.box2 ol {
+    float: left;
+    font-size: x-large;
+    text-align: justify;
+    text-indent: 10px;
+}
+
+.box2 ol b {
+    float: left;
+    font-size: x-large;
+    text-align: justify;
+    text-indent: 10px;
+    color: #3fd5fb;
+}
+
+.box2 p b {
+    float: left;
+    font-size: x-large;
+    text-align: justify;
+    text-indent: 10px;
+    color: #3fd5fb;
+}
+
+.bw:hover {
+    filter: grayscale(60%) blur(1px);
+
+}
+
+.div3 {
+    width: 100%;
+
+    height: 100px;
+    padding: 10px;
+    float: right;
+    background-color: #3F5EFB;
+    display: flex;
+    text-align: center;
+    justify-content: space-around;
+
+}
+
+.Ivan {
+    color: #fff;
+    padding-left: 10px;
+
+}
+
+.smallbox2 {
+    width: 30%;
+    color: #fff;
+
+}
+
+.smallbox2 a {
+    text-decoration: none;
+    color: #fff;
+}
+
+@media all and (max-width: 900px) {
+
+
+    .box2 {
+        width: 70%;
+        margin: 5px;
+        margin-top: 10px;
+        padding: 5px;
+        font-family: monospace;
+        float: left;
+        color: #977763;
+    }
+
+    .box2 h1 {
+
+        margin-top: 3%;
+
+        font-size: 15px;
+        color: #3fd5fb;
+    }
+
+    .box2 p {
+        float: left;
+        font-size: large;
+        text-align: justify;
+        text-indent: 2px;
+    }
+
+    .box2 ol {
+        float: left;
+        font-size: large;
+        text-align: justify;
+        text-indent: 2px;
+    }
+
+    .box2 ol b {
+        float: left;
+        font-size: large;
+        text-align: justify;
+        text-indent: 2px;
+        color: #3fd5fb;
+    }
+
+    .box2 p b {
+        float: left;
+        font-size: large;
+        text-align: justify;
+        text-indent: 2px;
+        color: #3fd5fb;
+    }
+
+    .box1 p {
+        font-size: x-small;
+    }
+
+    .smallbox2 p {
+        font-size: 15px;
+    }
+
+    .smallbox2>.Ivan {
+        font-size: 13px;
+
+    }
+
+
+}
+
+.header img {
+    object-fit: fill;
+    overflow: hidden;
+    width: 100%;
+    height: 500px;
+    border: none !important;
+    box-shadow: none !important;
+    max-width: none;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.map {
+    width: 78%;
+    margin: 10px;
+    margin-top: 30px;
+    padding: 10px;
+    font-family: monospace;
+    float: left;
+    color: #977763;
+}
+
+.box4 {
+    width: 80%;
+
+    padding: 10px;
+    float: left;
+    background-color: #0e122700;
+    display: flex;
+    text-align: center;
+    justify-content: space-around;
+
+
+}
+
+.symbolsbox {
+    width: 30%;
+    color: #3F5EFB;
+
+}
+
+.smallb a {
+    text-decoration: none;
+    color: #3F5EFB;
+    
+}
